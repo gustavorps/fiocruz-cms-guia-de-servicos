@@ -12,9 +12,89 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "servico"
+    label: "Guia de Serviços"
+    folder: "fieldssrc/pages/servicos"
+    filter: {field: "language", value: "br"}
+    slug: "{{slug}}"
+    identifier_field: name
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ser"}
+      - {label: "Nome", name: "name", widget: "string"}
+      - {label: "Data de Publicação", name: "datePublished", widget: "datetime"}
+      - {label: "Destacado", name: "_featured", widget: "boolean"}
+      - {label: "Descrição", name: "description", widget: "markdown"}
+      - {label: "Banner", name: "image", widget: image}
+      - {label: "Instruções para Atendimento", name: "termsOfService", widget: "markdown"}
+      - {label: "Etiquetas", name: "_tags", widget: "list"}
+      - {label: "", name: "serviceOperator", widget: "string"}
+      - label: "Encontre o serviço", 
+        name: "provider"
+        widget: "object"
+        fields: 
+          - {label: "Nome", name: "name", widget: "string"}
+          - label: "Endereço", 
+            name: "address"
+            widget: "object"
+            fields:
+              - {label: "Context", name: "@context", widget: "hidden", default: "https://schema.org"}
+              - {label: "", name: "addressCountry", widget: string}
+              - {label: "", name: "addressLocality", widget: string}
+              - {label: "", name: "addressRegion", widget: string}
+              - {label: "", name: "postOfficeBoxNumber", widget: string}
+              - {label: "", name: "postalCode", widget: string}
+              - {label: "", name: "streetAddress", widget: string
+      - {label: "Tempo Estimado", name: "processingTime", widget: "string"}
+      - label: "Etapas"
+        name: "_step"
+        widget: "list"
+        summary: '{{fields.name}}'
+        fields:
+          - {label: "Nome", name: "name", widget: string}
+          - {label: "Descrição", name: "description", widget: "markdown"
+          - label: "Documentação Necessária"
+            name: documentRequirement
+            widget: "list"
+            fields:
+              - label: "Audiência"
+                name: "audience"
+                widget: select
+                multiple: true
+                options:
+                  - { label: "Servidores", value: "" }
+                  - { label: "Alunos", value: "" }
+                  - { label: "Bolsista", value: "" }
+                  - { label: "Terceirizados", value: "" }
+                  - { label: "Cidadão em geral", value: "" }
+                  - { label: "Todos", value: "" }
+              - {label: "Descrição", name: "description", widget: "markdown"
+          - label: "Canais de Atendimento"
+            name: availableChannel
+            widget: "list"
+            fields:
+              - label: "Audience"
+                name: "audience"
+                widget: select
+                multiple: true
+                options:
+                  - { label: "Servidores", value: "" }
+                  - { label: "Alunos", value: "" }
+                  - { label: "Bolsista", value: "" }
+                  - { label: "Terceirizados", value: "" }
+                  - { label: "Cidadão em geral", value: "" }
+                  - { label: "Todos", value: "" }
+              - label: "Canal"
+                name: "name"
+                widget: select
+                options:
+                  - { label: "Presencial", value: "IN_PERSON" }
+                  - { label: "E-Mail", value: "EMAIL" }
+                  - { label: "Telefone", value: "PHONE" }
+                  - { label: "Web", value: "WEB" }
+              - {label: "Descrição", name: "description", widget: "markdown"
   - name: "blog"
     label: "Blog"
-    folder: "src/pages/blog"
+    folder: "fieldssrc/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
