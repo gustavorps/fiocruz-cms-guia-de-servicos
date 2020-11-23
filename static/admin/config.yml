@@ -28,12 +28,12 @@ collections:
       - {label: "Instruções para Atendimento", name: "termsOfService", widget: "markdown"}
       - {label: "Etiquetas", name: "_tags", widget: "list"}
       - {label: "", name: "serviceOperator", widget: "string"}
-      - label: "Encontre o serviço", 
+      - label: "Encontre o serviço"
         name: "provider"
         widget: "object"
         fields: 
           - {label: "Nome", name: "name", widget: "string"}
-          - label: "Endereço", 
+          - label: "Endereço"
             name: "address"
             widget: "object"
             fields:
@@ -43,7 +43,7 @@ collections:
               - {label: "", name: "addressRegion", widget: string}
               - {label: "", name: "postOfficeBoxNumber", widget: string}
               - {label: "", name: "postalCode", widget: string}
-              - {label: "", name: "streetAddress", widget: string
+              - {label: "", name: "streetAddress", widget: string}
       - {label: "Tempo Estimado", name: "processingTime", widget: "string"}
       - label: "Etapas"
         name: "_step"
@@ -51,7 +51,7 @@ collections:
         summary: '{{fields.name}}'
         fields:
           - {label: "Nome", name: "name", widget: string}
-          - {label: "Descrição", name: "description", widget: "markdown"
+          - {label: "Descrição", name: "description", widget: "markdown"}
           - label: "Documentação Necessária"
             name: documentRequirement
             widget: "list"
@@ -67,7 +67,7 @@ collections:
                   - { label: "Terceirizados", value: "" }
                   - { label: "Cidadão em geral", value: "" }
                   - { label: "Todos", value: "" }
-              - {label: "Descrição", name: "description", widget: "markdown"
+              - {label: "Descrição", name: "description", widget: "markdown"}
           - label: "Canais de Atendimento"
             name: availableChannel
             widget: "list"
@@ -91,7 +91,7 @@ collections:
                   - { label: "E-Mail", value: "EMAIL" }
                   - { label: "Telefone", value: "PHONE" }
                   - { label: "Web", value: "WEB" }
-              - {label: "Descrição", name: "description", widget: "markdown"
+              - {label: "Descrição", name: "description", widget: "markdown"}
   - name: "blog"
     label: "Blog"
     folder: "fieldssrc/pages/blog"
